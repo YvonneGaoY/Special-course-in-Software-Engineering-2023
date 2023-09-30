@@ -1,5 +1,8 @@
 import sqlite3
 
+
+import datetime
+
 def connect_to_database(database_file):
     conn = sqlite3.connect(database_file)
     cursor = conn.cursor()
@@ -132,8 +135,6 @@ def find_all_books(cursor):
 
 
 
-import datetime
-
 def update_book_details(cursor, conn, book_id, title=None, author=None, isbn=None, status=None):
     if status is not None:
         cursor.execute('''UPDATE Books SET Status = ? WHERE BookID = ?''', (status, book_id))
@@ -205,7 +206,7 @@ def main():
             title = input("Enter book title: ")
             author = input("Enter book author: ")
             isbn = input("Enter book ISBN: ")
-            status = input("Enter book status: ")
+            status = input("Enter book status(Available or Reserved): ")
             add_book(cursor, conn, title, author, isbn, status)
 
         elif choice == "2":
@@ -224,7 +225,7 @@ def main():
             title = input("Enter updated title (leave blank to skip): ")
             author = input("Enter updated author (leave blank to skip): ")
             isbn = input("Enter updated ISBN (leave blank to skip): ")
-            status = input("Enter updated status (leave blank to skip): ")
+            status = input("Enter updated status (leave blank to skip)(Available or Reserved): ")
             update_book_details(cursor, conn, book_id, title, author, isbn, status)
 
         elif choice == "6":
