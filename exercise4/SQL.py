@@ -1,10 +1,9 @@
 import sqlite3
 
-# 连接到 SQLite 数据库
 conn = sqlite3.connect('library.db')
 c = conn.cursor()
 
-# 执行 SQL 查询语句
+# Query Search for a book
 book_id = input("Enter BookID: ")
 c.execute('''SELECT Books.BookID, Books.Title, Books.Status, Users.Name, Users.Email
               FROM Books
@@ -12,10 +11,9 @@ c.execute('''SELECT Books.BookID, Books.Title, Books.Status, Users.Name, Users.E
               LEFT JOIN Users ON Users.UserID = Reservations.UserID
               WHERE Books.BookID = ?''', (book_id,))
 
-# 获取查询结果
+
 results = c.fetchall()
 
-# 打印查询结果
 if results:
     for result in results:
         book_id, title, status, name, email = result
@@ -30,7 +28,7 @@ else:
     print("No matching books found.")
     
 
-# 查询某个用户的预订情况
+#  Query a user's reservation status
 userid = input("Enter UserID: ")
 
 c.execute('''SELECT Books.BookID, Books.Title, Books.Status, Reservations.ReservationDate
@@ -49,9 +47,9 @@ else:
         print(f"Title: {title}")
         print(f"Status: {status}")
         print(f"Reservation Date: {reservation_date}\n")
+print("-------------")
 
-
-# 查询某个预订的详细信息
+# Query the details of a reservation
 reservation_id = input("Enter ReservationID: ")
 
 c.execute('''SELECT Books.BookID, Books.Title, Books.Author, Books.ISBN, Books.Status, Users.Name, Users.Email, Reservations.ReservationDate
@@ -61,7 +59,6 @@ c.execute('''SELECT Books.BookID, Books.Title, Books.Author, Books.ISBN, Books.S
                   WHERE Reservations.ReservationID = ?''', (reservation_id,))
 
 result = c.fetchone()
-
 if result is None:
     print("Reservation not found.")
 else:
@@ -76,5 +73,4 @@ else:
         print(f"Reserved by: {user_name} ({user_email})")
         print(f"Reservation Date: {reservation_date}")
 
-# 关闭数据库连接
 conn.close()
