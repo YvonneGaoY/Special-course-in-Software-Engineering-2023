@@ -1,0 +1,341 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    -hello
+    - Good morning.
+    - Good evening.
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: mood_rude
+  examples: |
+    - shit
+    - fuck
+    - damn
+
+- intent: ask_introduction
+  examples: |
+    -  what can you do for me?
+    -  what can you do ?
+
+- intent: mood_unknown1
+  examples: |
+    - lalalalala
+    - dudududuud
+    - heheheheh
+    - 12345
+
+- intent: mood_unknown2
+  examples: |
+    - dshjercwn
+    - 83jusirwmrw
+    - BBBbBB
+
+- intent: select_phone
+  examples: |
+    - phone
+    - I select phone
+
+- intent: provide_phone_number
+  examples: |
+    - 12714891642
+    - 12234543452
+    - 57387249739
+
+- intent: select_email
+  examples: |
+    - email
+    - I select email
+
+- intent: select_online
+  examples: |
+    - online
+    - I select online
+  
+# Added for restaurant
+- intent: find_restaurant
+  examples: |
+   - Find a restaurant near [Haidian District, Beijing](location)
+   - Is there a good restaurant in [Haidian District, Beijing](location)?
+   - [Haidian District, Beijing](location) Is there a good restaurant?
+   - Find a restaurant near [Xuhui District, Shanghai](location)
+   - Is there a good restaurant in [Shanghai Xuhui District](location)?
+   - [Xuhui District, Shanghai](location) Is there a good restaurant?
+   - Find a restaurant near [Shanghai Minhang District](location)
+   - Is there a good restaurant in [Minhang District, Shanghai](location)?
+   - [Minhang District, Shanghai](location) Is there a good restaurant?
+
+- intent: view_menu
+  examples: |
+    - Show me the menu
+    - Could you have a look at the menu of [Pizza Hut]
+    - I want to see what's on the menu at [Pizza Hut].
+    - What do they serve at the restaurant?
+    - Could you look at the menu at [McDonald's] restaurant
+    - I want to see what's on the menu at [McDonald's] restaurant?
+    - What do they serve at [McDonald's](restaurant)?
+    - Could you have a look at the menu at the restaurant
+    - I'd like to see what's on the menu at the restaurant.
+    - What do you have at the restaurant?
+    - Could you have a look at the menu of the restaurant
+    - I'd like to see what's on the menu at [restaurant].
+    - [Shangyin Aquatic Products](restaurant) What do you have to eat?
+
+# - intent: ask_chatbot
+#   examples: |
+#     - What are you doing?
+#     - What are you up to？
+#     - What are you doing now?
+
+- intent: upload_image
+  examples: |
+    - Please send me a picture of the meal.
+    - Could you send me a picture of the meal?
+
+- intent: order_dish
+  examples: |
+    - I'd like to order
+    - I'd like to order a pizza (dish).
+    - Give me a [pizza](dish)
+    - I want [pizza](dish)
+    - Have a [pizza] dish
+    - I'd like to order a salad (dish).
+    - Give me a salad (dish).
+    - I want [salad](dish)
+    - Have a salad (dish)
+    - I'd like to order a steak (dish).
+    - Give me a [steak](dish).
+    - I want [steak](dish)
+    - Have a [steak] dish
+    - I'd like to order a [hamburger](dish)
+    - Give me a [hamburger](dish)
+    - I want [hamburger](dish)
+    - Have a [hamburger](dish)
+    - I'd like to order [fried chicken](dish).
+    - Give me a [fried chicken](dish).
+    - I want [fried chicken](dish)
+    - Have a [fried chicken] dish
+    - I'd like to order a milkshake (dish)
+    - Give me a milkshake (dish)
+    - I want [shake](dish)
+    - Have a milkshake (dish)
+    - I'd like to order [sushi](dish)
+    - Give me a [sushi](dish)
+    - I want [sushi](dish)
+    - Let's have a sushi (dish)
+    - I'd like to order a salmon Sashimi (dish).
+    - Give me a [Salmon Sashimi](dish)
+    - I want [Salmon Sashimi](dish)
+    - Have a salmon sashimi (dish)
+    - I'd like to order an eel (dish).
+    - Give me an eel (dish).
+    - I want [eel](dish)
+    - Have a [eel] dish
+    - I'd like to order a [Bibimbap].
+    - Give me a [bibimbap](dish)
+    - I want [Bibimbap](dish)
+    - Have a [bibimbap] dish
+    - I'd like to order a dish.
+    - Give me a dish.
+    - I want [cold noodles](dish)
+    -Let's have a dish
+    - I'd like to order a beef platter.
+    - Give me a [beef] dish.
+    - I want [beef platter](dish)
+    -Let's have a [beef] dish
+
+- intent: cancel_order
+  examples: |
+    - I'd like to cancel my order
+    - Cancel my order
+    - Cancel this order [orderid1](oid)
+    - This order [orderid1](oid)
+    - Cancel my order [orderid1](oid)
+    - Cancel this order [orderid2](oid)
+    - This order [orderid2](oid)
+    - Cancel my order [orderid2](oid)
+    - Cancel this order [orderid3](oid)
+    - This order [orderid3](oid)
+    - Cancel my order [orderid3](oid)
+    - Cancel this order [orderid4](oid)
+    - This order [orderid4](oid)
+    - Cancel my order [orderid4](oid)
+    - Cancel this order [orderid5](oid)
+    - This order [orderid5](oid)
+    - Cancel my order [orderid5](oid)
+    - Cancel this order [orderid6](oid)
+    - This order [orderid6](oid)
+    - Cancel my order [orderid6](oid)
+    - Cancel this order [orderid7](oid)
+    - This order [orderid7](oid)
+    - Cancel my order [orderid7](oid)
+    - Cancel this order [orderid8](oid)
+    - This order [orderid8](oid)
+    - Cancel my order [orderid8](oid)
+    - Cancel this order [orderid9](oid)
+    - This order [orderid9](oid)
+    - Cancel my order [orderid9](oid)
+    - Cancel this order [orderid10](oid)
+    - This order [orderid10](oid)
+    - Cancel my order [orderid10](oid)
+    - Cancel this order [orderid11](oid)
+    - This order [orderid11](oid)
+    - Cancel my order [orderid11](oid)
+    - Cancel this order [orderid12](oid)
+    - This order [orderid12](oid)
+    - Cancel my order [orderid12](oid)
+    - Cancel this order [orderid13](oid)
+    - This order [orderid13](oid)
+    - Cancel my order [orderid13](oid)
+    - Cancel this order [orderid14](oid)
+    - This order [orderid14](oid)
+    - Cancel my order [orderid14](oid)
+    - Cancel this order [orderid15](oid)
+    - This order [orderid15](oid)
+    - Cancel my order [orderid15](oid)
+    - Cancel this order [orderid16](oid)
+    - This order [orderid16](oid)
+    - Cancel my order [orderid16](oid)
+    - Cancel this order [orderid17](oid)
+    - This order [orderid17](oid)
+    - Cancel my order [orderid17](oid)
+    - Cancel this order [orderid18](oid)
+    - This order [orderid18](oid)
+    - Cancel my order [orderid18](oid)
+    - Cancel this order [orderid19](oid)
+    - This order [orderid19](oid)
+    - Cancel my order [orderid19](oid)
+    - Cancel this order [orderid20](oid)
+    - This order [orderid20](oid)
+    - Cancel my order [orderid20](oid)
+
+- intent: track_order
+  examples: |
+    - Can you tell me the status of my order?
+    - I was wondering if my order is ready?
+    - Is my order [orderid1](oid) ready?
+    - [orderid1](oid) Ready?
+    - Is my order [orderid2](oid) ready?
+    - [orderid2](oid) Ready?
+    - Is my order [orderid3](oid) ready?
+    - [orderid3](oid) Ready?
+    - Is my order [orderid4](oid) ready?
+    - [orderid4](oid) Ready?
+    - Is my order [orderid5](oid) ready?
+    - [orderid5](oid) Ready?
+    - Is my order [orderid6](oid) ready?
+    - [orderid6](oid) Ready?
+    - Is my order [orderid7](oid) ready?
+    - [orderid7](oid) Ready?
+    - Is my order [orderid8](oid) ready?
+    - [orderid8](oid) Ready?
+    - Is my order [orderid9](oid) ready?
+    - [orderid9](oid) Ready?
+    - Is my order [orderid10](oid) ready?
+    - [orderid10](oid) Ready?
+    - Is my order [orderid11](oid) ready?
+    - [orderid11](oid) Ready?
+    - Is my order [orderid12](oid) ready?
+    - [orderid12](oid) Ready?
+    - Is my order [orderid13](oid) ready?
+    - [orderid13](oid) Ready?
+    - Is my order [orderid14](oid) ready?
+    - [orderid14](oid) Ready?
+    - Is my order [orderid15](oid) ready?
+    - [orderid15](oid) Ready?
+    - Is my order [orderid16](oid) ready?
+    - [orderid16](oid) Ready?
+    - Is my order [orderid17](oid) ready?
+    - [orderid17](oid) Ready?
+    - Is my order [orderid18](oid) ready?
+    - [orderid18](oid) Ready?
+    - Is my order [orderid19](oid) ready?
+    - [orderid19](oid) Ready?
+    - Is my order [orderid20](oid) ready?
+    - [orderid20](oid) Ready?

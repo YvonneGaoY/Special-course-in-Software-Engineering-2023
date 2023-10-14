@@ -1,0 +1,211 @@
+# See also <https://rasa.com/docs/rasa/domain>
+version: "3.1"
+
+# intents:
+#   - greet
+#   - goodbye
+#   - affirm
+#   - deny
+#   - mood_great
+#   - mood_unhappy
+#   - bot_challenge
+
+# responses:
+#   utter_greet:
+#   - text: "Hey! How are you?"
+
+#   utter_cheer_up:
+#   - text: "Here is something to cheer you up:"
+#     image: "https://i.imgur.com/nGF1K8f.jpg"
+
+#   utter_did_that_help:
+#   - text: "Did that help you?"
+
+#   utter_happy:
+#   - text: "Great, carry on!"
+
+#   utter_goodbye:
+#   - text: "Bye"
+
+#   utter_iamabot:
+#   - text: "I am a bot, powered by Rasa."
+
+# session_config:
+#   session_expiration_time: 60
+#   carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - find_restaurant
+  - view_menu
+  - order_dish
+  - cancel_order
+  - track_order
+  - mood_rude
+  - mood_unknown1
+  - mood_unknown2
+  - select_email
+  - select_phone
+  - select_online
+  - provide_phone_number
+  - ask_introduction
+  - upload_image
+    # - ask_chatbot
+
+entities:
+  - location
+  - restaurant
+  - dish
+  - oid
+  - contact
+  - phone_number
+
+
+
+
+
+
+
+
+
+slots:
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+    - entity: location
+      type: from_entity
+    
+  restaurant:
+    type: text
+    influence_conversation: false
+    mappings:
+    - entity: restaurant
+      type: from_entity
+
+  dish:
+    type: text
+    influence_conversation: true
+    mappings:
+    - entity: dish
+      type: from_entity
+
+  oid:
+    type: text
+    influence_conversation: true
+    mappings:
+    - entity: oid
+      type: from_entity
+  contact:
+    type: text
+    influence_conversation: true
+    mappings:
+    - entity: contact
+      type: from_entity
+  phone_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - entity: phone_number
+      type: from_entity
+      
+
+actions:
+  - action_find_restaurant
+  - action_view_menu
+  - action_order_dish
+  - action_cancel_order
+  - action_track_order
+  - utter_unknown_one
+  - utter_rude
+  - utter_unknown_two
+  - utter_contact
+  - utter_request_phone_number
+  - utter_phone_service_confirmation
+  - utter_email_service_confirmation
+  - utter_online_transfer_confirmation
+  - utter_goodbye
+  - utter_iamabot
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_introduction
+  # - utter_chatbot
+  - utter_process_image
+  
+
+
+responses:
+  utter_greet:
+  - text: "Welcome to Feed Me. May I help you?"
+  - text: "Hey! What can I do for you?"
+  - text: "Hello! How can I help you?"
+  - text: "Hi! What can I do for you?"
+
+
+  utter_cheer_up:
+  - text: "Cheer up!"
+
+  utter_introduction:
+  - text: "Hi, I am Feed Me. I can provide you with the following services:\nSearch for restaurants in a given area\nBrowse menus\nOrder food\nTrack the order\nCancel order\nWhat services do you need?"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  
+  utter_rude:
+  - text: "I'm just a robot. Please be polite"
+  - text: "Please don't swear. Thank you"
+
+  utter_unknown_one:
+  - text: "I'm sorry, I don't know what you're talking about"
+  - text: "I'm sorry. Could you say that again? Thank you"
+
+  utter_unknown_two:
+  - text: "I'm sorry, I cannot understand. Do you need to transfer to a human service?"
+  - text: "I'm sorry. May I ask if you need manual help to solve the problem?"
+
+  utter_contact:
+  - text: "You can choose from the following options: \nphone\nemail\nonline."
+
+  utter_request_phone_number:
+  - text: "Please provide your phone number so that we can assist you further."
+
+  utter_phone_service_confirmation:
+  - text: "Thank you for providing your phone number. We will soon initiate our phone service and contact you."
+
+  utter_email_service_confirmation:
+  - text: "Great! Please send your email to 111@qq.com. Our team will handle your request within two working days."
+
+  utter_online_transfer_confirmation:
+  - text: "Fantastic! You are now connected to our online customer service representative."
+
+  # utter_chatbot:
+  # - text: "I am talking to you."
+  # - text: "I am working."
+
+  utter_process_image: 
+  - text: "Here is the processed image:"
+    image: "image/food.jpg"
+
+
+  # 在这里添加其他可能的回复
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

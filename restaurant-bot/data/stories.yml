@@ -1,0 +1,101 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story:  politeness path
+  steps:
+  - intent: mood_rude
+  - action: utter_rude
+
+- story: not_understand_path
+  steps:
+  - intent: mood_unknown1
+  - action: utter_unknown_one
+  - intent: mood_unknown2
+  - action: utter_unknown_two
+  - intent: affirm
+  - action: utter_contact
+
+- story: phone
+  steps:
+  - intent: select_phone
+  - action: utter_request_phone_number
+  - intent: provide_phone_number
+  - action: utter_phone_service_confirmation
+- story: email
+  steps: 
+  - intent: select_email
+  - action: utter_email_service_confirmation
+- story: online
+  steps:
+  - intent: select_online
+  - action: utter_online_transfer_confirmation
+
+- story: Introduction
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_introduction
+  - action: utter_introduction
+
+# Added for restaurant
+- story: 用户查找餐厅
+  steps:
+    - intent: find_restaurant
+    - action: action_find_restaurant
+
+- story: 用户浏览菜单
+  steps:
+    - intent: view_menu
+    - action: action_view_menu
+
+- story: 用户点菜
+  steps:
+    - intent: order_dish
+    - action: action_order_dish
+
+- story: 用户取消订单
+  steps:
+    - intent: cancel_order
+    - action: action_cancel_order
+
+- story: 用户跟踪订单
+  steps:
+    - intent: track_order
+    - action: action_track_order
+
+# - story: 回答一般问题
+#   steps:
+#     - intent: ask_chatbot
+#     - action: utter_chatbot
+
+- story: Upload image
+  steps:
+  - intent: upload_image
+  - action: utter_process_image
