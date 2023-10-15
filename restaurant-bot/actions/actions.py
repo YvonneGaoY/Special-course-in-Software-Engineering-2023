@@ -100,7 +100,7 @@ class ActionOrderDish(Action):
                 if dish in memu:
                     # order_id = uuid.uuid4()
                     # bytes_uuid = order_id.bytes
-                    # # 将字节表示形式转换为十六进制字符串，无连字符
+                    
                     # hex_uuid = ''.join('{:02x}'.format(b) for b in bytes_uuid)
 
                     # order_id_str = str(hex_uuid)
@@ -164,8 +164,7 @@ class ActionTrackOrder(Action):
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict[Text, Any]]:
         try:
-            # 跟踪订单的逻辑
-            # 可以从数据库中查找用户的订单状态
+            
             oid = tracker.get_slot("oid")
             log_time = datetime.datetime.now()
             log_time_str = log_time.strftime("%Y-%m-%d %H:%M:%S")
