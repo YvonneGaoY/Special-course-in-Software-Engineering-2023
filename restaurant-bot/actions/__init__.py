@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-# 模拟一些位置信息
+
 LOCATIONS = [
     "Haidian District",
     "Minhang District",
@@ -49,12 +49,12 @@ class OrderManager:
         oid_string = ', '.join(self.orders.keys())
         print(f"[OrderManager] get_order_status||{oid_string}")
         if order_id in self.orders:
-            # 将字符串解析为 datetime 对象
+            # 
             create_time = datetime.strptime(
                 self.orders[order_id]["Creation time"], "%Y-%m-%d %H:%M:%S")
             current_time = datetime.strptime(
                 current_time_str, "%Y-%m-%d %H:%M:%S")
-            # 计算两个 datetime 对象之间的时间差
+            # 
             time_difference = current_time - create_time
 
             if time_difference > timedelta(minutes=1):
@@ -73,5 +73,5 @@ class OrderManager:
         return "success"
 
 
-# 创建订单管理器实例
+
 ORDER_MANAGER = OrderManager()
