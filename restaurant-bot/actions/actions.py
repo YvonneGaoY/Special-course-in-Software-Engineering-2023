@@ -26,7 +26,7 @@ class ActionSearchRestaurant(Action):
                 dispatcher.utter_message(error_message)
                 return []
 
-            # 根据用户提供的位置查找餐厅信息
+            # Find restaurant information based on the location provided by the user
             if location in LOCATIONS:
                 # print(f"Location: {location}")
                 # print("Restaurants:")
@@ -106,7 +106,7 @@ class ActionOrderDish(Action):
                     # order_id_str = str(hex_uuid)
 
                     current_datetime = datetime.datetime.now()
-                    # 将 datetime 对象转换为字符串
+                    #Converts a datetime object to a string
                     date_time_str = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
                     id = ORDER_MANAGER.create_order(dish, date_time_str)
@@ -135,8 +135,8 @@ class ActionCancelOrder(Action):
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict[Text, Any]]:
         try:
-            # 取消订单的逻辑
-            # 可以从数据库中查找用户的订单并取消
+            # Cancellation logic
+            # The user's order can be found in the database and cancelled
             oid = tracker.get_slot("oid")
             log_time = datetime.datetime.now()
             log_time_str = log_time.strftime("%Y-%m-%d %H:%M:%S")

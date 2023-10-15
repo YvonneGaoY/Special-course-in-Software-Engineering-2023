@@ -98,6 +98,16 @@ nlu:
     - shit
     - fuck
     - damn
+    - Screw you, you dumb bot
+    - Do you want to date me
+    - I love you
+    
+- intent:  thank_bot
+  examples: |
+    - Thanks
+    - Thank you 
+    - Thanks for your help
+    - Thank you for helping me 
 
 - intent: ask_introduction
   examples: |
@@ -124,8 +134,8 @@ nlu:
 
 - intent: provide_phone_number
   examples: |
-    - 12714891642
-    - 12234543452
+    - 34714891642
+    - 37234543452
     - 57387249739
 
 - intent: select_email
@@ -141,94 +151,85 @@ nlu:
 # Added for restaurant
 - intent: find_restaurant
   examples: |
-   - Find a restaurant near [Haidian District, Beijing](location)
-   - Is there a good restaurant in [Haidian District, Beijing](location)?
-   - [Haidian District, Beijing](location) Is there a good restaurant?
-   - Find a restaurant near [Xuhui District, Shanghai](location)
-   - Is there a good restaurant in [Shanghai Xuhui District](location)?
-   - [Xuhui District, Shanghai](location) Is there a good restaurant?
-   - Find a restaurant near [Shanghai Minhang District](location)
-   - Is there a good restaurant in [Minhang District, Shanghai](location)?
-   - [Minhang District, Shanghai](location) Is there a good restaurant?
+    - Find a restaurant near [Haidian District](location)
+    - Is there a good restaurant in [Haidian District](location)?
+    - [Haidian District](location) Is there a good restaurant?
+    - Find a restaurant near [Xuhui District](location)
+    - Is there a good restaurant in [Xuhui District](location)?
+    - [Xuhui District](location) Is there a good restaurant?
+    - Find a restaurant near [Minhang District](location)
+    - Is there a good restaurant in [Minhang District](location)?
+    - [Minhang District](location) Is there a good restaurant?
 
 - intent: view_menu
   examples: |
     - Show me the menu
-    - Could you have a look at the menu of [Pizza Hut]
-    - I want to see what's on the menu at [Pizza Hut].
-    - What do they serve at the restaurant?
-    - Could you look at the menu at [McDonald's] restaurant
-    - I want to see what's on the menu at [McDonald's] restaurant?
+    - Could you have a look at the menu of [Pizza Hut](restaurant).
+    - I want to see what is on the menu at [Pizza Hut](restaurant).
+    - What do they serve at the [Pizza Hut](restaurant)?
+    - Could you look at the menu at [McDonald's](restaurant)
+    - I want to see what is on the menu at [McDonald's](restaurant)?
     - What do they serve at [McDonald's](restaurant)?
-    - Could you have a look at the menu at the restaurant
-    - I'd like to see what's on the menu at the restaurant.
-    - What do you have at the restaurant?
-    - Could you have a look at the menu of the restaurant
-    - I'd like to see what's on the menu at [restaurant].
-    - [Shangyin Aquatic Products](restaurant) What do you have to eat?
+    - Could you have a look at the menu at the [Yuanjia](restaurant).
+    - I would like to see what is on the menu at the [Yuanjia](restaurant).
+    - What do you have at the [Yuanjia](restaurant)
+    - Could you have a look at the menu of the [Hidden aquatic products](restaurant)?
+    - I would like to see what is on the menu at [Hidden aquatic products](restaurant).
+    - [Hidden aquatic products](restaurant) What do you have to eat?
 
-# - intent: ask_chatbot
-#   examples: |
-#     - What are you doing?
-#     - What are you up to？
-#     - What are you doing now?
 
-- intent: upload_image
-  examples: |
-    - Please send me a picture of the meal.
-    - Could you send me a picture of the meal?
 
 - intent: order_dish
   examples: |
     - I'd like to order
-    - I'd like to order a pizza (dish).
-    - Give me a [pizza](dish)
-    - I want [pizza](dish)
-    - Have a [pizza] dish
-    - I'd like to order a salad (dish).
-    - Give me a salad (dish).
-    - I want [salad](dish)
-    - Have a salad (dish)
-    - I'd like to order a steak (dish).
-    - Give me a [steak](dish).
-    - I want [steak](dish)
-    - Have a [steak] dish
-    - I'd like to order a [hamburger](dish)
-    - Give me a [hamburger](dish)
-    - I want [hamburger](dish)
-    - Have a [hamburger](dish)
-    - I'd like to order [fried chicken](dish).
-    - Give me a [fried chicken](dish).
-    - I want [fried chicken](dish)
-    - Have a [fried chicken] dish
-    - I'd like to order a milkshake (dish)
-    - Give me a milkshake (dish)
-    - I want [shake](dish)
-    - Have a milkshake (dish)
-    - I'd like to order [sushi](dish)
-    - Give me a [sushi](dish)
-    - I want [sushi](dish)
-    - Let's have a sushi (dish)
-    - I'd like to order a salmon Sashimi (dish).
+    - I'd like to order a [Pizza](dish).
+    - Give me a [Pizza](dish)
+    - I want [Pizza](dish)
+    - Have a [Pizza](dish)
+    - I'd like to order a [Salad](dish).
+    - Give me a [Salad](dish).
+    - I want [Salad](dish)
+    - Have a [Salad](dish)
+    - I'd like to order a [Steak](dish).
+    - Give me a [Steak](dish).
+    - I want [Steak](dish)
+    - Have a [Steak](dish)
+    - I'd like to order a [Burger](dish)
+    - Give me a [Burger](dish)
+    - I want [Burger](dish)
+    - Have a [Burger](dish)
+    - I'd like to order [Fried chicken](dish).
+    - Give me a [Fried chicken](dish).
+    - I want [Fried chicken](dish)
+    - Have a [Fried chicken] dish
+    - I'd like to order a [Milkshake](dish)
+    - Give me a [Milkshake](dish)
+    - I want [Milkshake](dish)
+    - Have a [Milkshake](dish)
+    - I'd like to order [Sushi](dish)
+    - Give me a [Sushi](dish)
+    - I want [Sushi](dish)
+    - Let's have a [Sushi](dish)
+    - I'd like to order a [Salmon Sashimi](dish)
     - Give me a [Salmon Sashimi](dish)
     - I want [Salmon Sashimi](dish)
-    - Have a salmon sashimi (dish)
-    - I'd like to order an eel (dish).
-    - Give me an eel (dish).
-    - I want [eel](dish)
-    - Have a [eel] dish
-    - I'd like to order a [Bibimbap].
-    - Give me a [bibimbap](dish)
+    - Have a [Salmon Sashimi](dish)
+    - I'd like to order an [Eel](dish)
+    - Give me an [Eel](dish)
+    - I want [Eel](dish)
+    - Have a [Eel](dish)
+    - I'd like to order a [Bibimbap](dish)
+    - Give me a [Bibimbap](dish)
     - I want [Bibimbap](dish)
-    - Have a [bibimbap] dish
-    - I'd like to order a dish.
-    - Give me a dish.
-    - I want [cold noodles](dish)
-    -Let's have a dish
-    - I'd like to order a beef platter.
-    - Give me a [beef] dish.
-    - I want [beef platter](dish)
-    -Let's have a [beef] dish
+    - Have a [Bibimbap](dish)
+    - I'd like to order a [Bibimbap](dish)
+    - Give me a [Bibimbap](dish)
+    - I want [Cold noodles](dish)
+    -Let's have a [Cold noodles](dish)
+    - I'd like to order a [Beef platter](dish)
+    - Give me a [Beef platter](dish)
+    - I want [Beef platter](dish)
+    -Let's have a [Beef platter](dish)
 
 - intent: cancel_order
   examples: |
@@ -339,3 +340,14 @@ nlu:
     - [orderid19](oid) Ready?
     - Is my order [orderid20](oid) ready?
     - [orderid20](oid) Ready?
+
+- intent: ask_doing
+  examples: |
+    - What are you doing?
+    - What are you doing now?
+
+- intent: upload_image
+  examples: |
+    - Please show me a image.
+    - Can you show me a picture.
+ 

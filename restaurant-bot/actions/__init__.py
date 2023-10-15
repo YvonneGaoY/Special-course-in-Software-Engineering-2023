@@ -2,28 +2,28 @@ from datetime import datetime, timedelta
 
 # 模拟一些位置信息
 LOCATIONS = [
-    "Haidian District, Beijing",
-    "Minhang District, Shanghai",
-    "Xuhui District, Shanghai"
+    "Haidian District",
+    "Minhang District",
+    "Xuhui District"
 ]
 
 # Simulated restaurant and menu information
 RESTANRANTS = {
     "Pizza Hut": {
-        "location": "Haidian District, Beijing",
-        "menu": ["Pizza", "Salad", "steak"]
+        "location": "Haidian District",
+        "menu": ["Pizza", "Salad", "Steak"]
     },
     "McDonald's": {
-        "location": "Minhang District, Shanghai",
-        "menu": ["Burger", "fried chicken", "Milkshake"]
+        "location": "Minhang District",
+        "menu": ["Burger", "Fried chicken", "Milkshake"]
     },
     "Hidden aquatic products": {
-        "location": "Shanghai Xuhui District ",
+        "location": "Xuhui District",
         "menu": ["Sushi", "Salmon Sashimi", " Eel"]
     },
     "Yuanjia": {
-        "location": "Shanghai Xuhui District ",
-        "menu": ["Bibimbap", "cold noodles", "Beef platter"]
+        "location": "Xuhui District",
+        "menu": ["Bibimbap", "Cold noodles", "Beef platter"]
     },
 }
 

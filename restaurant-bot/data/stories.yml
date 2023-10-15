@@ -64,38 +64,40 @@ stories:
   - intent: ask_introduction
   - action: utter_introduction
 
+- story: Image
+  steps:
+  - intent: ask_doing
+  - action: utter_doing
+  - intent: upload_image
+  - action: utter_process_image
+
+- story: Thank
+  steps:
+  - intent: thank_bot
+  - action: utter_thanks
 # Added for restaurant
-- story: 用户查找餐厅
+- story: User search restaurant
   steps:
     - intent: find_restaurant
     - action: action_find_restaurant
 
-- story: 用户浏览菜单
+- story: Browse menu
   steps:
     - intent: view_menu
     - action: action_view_menu
 
-- story: 用户点菜
+- story: User order
   steps:
     - intent: order_dish
     - action: action_order_dish
 
-- story: 用户取消订单
+- story: User cancels order
   steps:
     - intent: cancel_order
     - action: action_cancel_order
 
-- story: 用户跟踪订单
+- story: User tracking order
   steps:
     - intent: track_order
     - action: action_track_order
 
-# - story: 回答一般问题
-#   steps:
-#     - intent: ask_chatbot
-#     - action: utter_chatbot
-
-- story: Upload image
-  steps:
-  - intent: upload_image
-  - action: utter_process_image

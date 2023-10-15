@@ -55,8 +55,9 @@ intents:
   - select_online
   - provide_phone_number
   - ask_introduction
+  - ask_doing
   - upload_image
-    # - ask_chatbot
+  - thank_bot
 
 entities:
   - location
@@ -64,13 +65,6 @@ entities:
   - dish
   - oid
   - contact
-  - phone_number
-
-
-
-
-
-
 
 
 
@@ -102,18 +96,15 @@ slots:
     mappings:
     - entity: oid
       type: from_entity
+
   contact:
     type: text
     influence_conversation: true
     mappings:
     - entity: contact
       type: from_entity
-  phone_number:
-    type: text
-    influence_conversation: true
-    mappings:
-    - entity: phone_number
-      type: from_entity
+
+
       
 
 actions:
@@ -137,9 +128,9 @@ actions:
   - utter_did_that_help
   - utter_happy
   - utter_introduction
-  # - utter_chatbot
+  - utter_doing
   - utter_process_image
-  
+  - utter_thanks
 
 
 responses:
@@ -169,8 +160,7 @@ responses:
   - text: "I am a bot, powered by Rasa."
   
   utter_rude:
-  - text: "I'm just a robot. Please be polite"
-  - text: "Please don't swear. Thank you"
+  - text: "I'm just a robot. Please be polite.Thank you."
 
   utter_unknown_one:
   - text: "I'm sorry, I don't know what you're talking about"
@@ -195,16 +185,20 @@ responses:
   utter_online_transfer_confirmation:
   - text: "Fantastic! You are now connected to our online customer service representative."
 
-  # utter_chatbot:
-  # - text: "I am talking to you."
-  # - text: "I am working."
-
+  utter_doing:
+  - text: "I am talking to you."
+  - text: "I am working."
+  
   utter_process_image: 
   - text: "Here is the processed image:"
-    image: "image/food.jpg"
+    image: "food.jpg"
+  
+  utter_thanks:
+  - text: "You're welcome. Could you please go ahead and tell me about your other needs?"
 
 
-  # 在这里添加其他可能的回复
+
+
 
 session_config:
   session_expiration_time: 60
